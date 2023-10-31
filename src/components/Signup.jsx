@@ -23,7 +23,7 @@ const Signup = () => {
   
   const addUser = async (e) => {
     console.log(e.target)
-    await fetch('http://localhost:3000/sign-up', { 
+    await fetch('https://still-pond-6102.fly.dev/sign-up', { 
         mode: 'cors',
         method: 'POST',
         headers: {
@@ -46,7 +46,7 @@ const Signup = () => {
   return (
     <>
      <h1>Sign up</h1>
-     <form method='POST' action='http://localhost:3000/sign-up'>
+     <form method='POST' action='https://still-pond-6102.fly.dev/sign-up'>
       <label htmlFor='first_name'>
         <input type='text' required name='first_name' onChange={handleFirst} id='first_name' placeholder='enter first name' />
       </label>

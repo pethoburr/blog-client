@@ -19,7 +19,7 @@ const Comment = ({ cmnt, user, up, del }) => {
     const handleEdit = (e) => {
         e.preventDefault()
         console.log('cmnt:' + comment)
-        fetch(`http://localhost:3000/posts/${user}/comments/${cmnt._id}/update`, {
+        fetch(`https://still-pond-6102.fly.dev/posts/${user}/comments/${cmnt._id}/update`, {
         mode: 'cors',
         method: 'POST',
         headers: {
@@ -38,7 +38,7 @@ const Comment = ({ cmnt, user, up, del }) => {
     }
 
     const handleDelete = () => {
-        fetch(`http://localhost:3000/posts/${user}/comments/${cmnt._id}/delete`, {
+        fetch(`https://still-pond-6102.fly.dev/posts/${user}/comments/${cmnt._id}/delete`, {
         mode: 'cors',
         method: 'POST',
         headers: {

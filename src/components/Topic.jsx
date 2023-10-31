@@ -11,7 +11,7 @@ const Topic = () => {
     const [posts, setPosts] = useState([])
 
     const getTopic = () => {
-        fetch(`http://localhost:3000/topics/${id}`)
+        fetch(`https://still-pond-6102.fly.dev/topics/${id}`)
             .then((resp) => resp.json())
             .then((resp) => {
                 console.log(resp)
@@ -24,6 +24,11 @@ const Topic = () => {
     useEffect(() => {
         getTopic()
     },[])
+
+    useEffect(() => {
+        console.log('topic:' + topic)
+        console.log('posts:' + posts)
+    },[topic, posts])
 
     const logOut = () => {
         logout()

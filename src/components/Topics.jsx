@@ -20,7 +20,7 @@ const Topics = () => {
 
   const getTopics = () => {
     console.log(`token: ${token}`)
-    fetch('http://localhost:3000/topics', {
+    fetch('https://still-pond-6102.fly.dev/topics', {
       headers: {
         'Authorization': `Bearer ${token}`
       }

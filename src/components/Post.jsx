@@ -29,7 +29,7 @@ const Post = () => {
 
   const getPost = () => {
     console.log(`token: ${token}`)
-    fetch(`http://localhost:3000/posts/${id}`, {
+    fetch(`https://still-pond-6102.fly.dev/posts/${id}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -64,7 +64,7 @@ const Post = () => {
     e.preventDefault()
     console.log(token.id)
     console.log(`text: ${newText}`)
-    fetch(`http://localhost:3000/posts/${id}/comments/add`, {
+    fetch(`https://still-pond-6102.fly.dev/posts/${id}/comments/add`, {
       mode: 'cors',
       method: 'POST',
       headers: {

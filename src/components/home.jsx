@@ -9,7 +9,7 @@ const Home = () => {
   const { token, logout } = useContext(AuthContext)
 
   const getPosts = async () => {
-    await fetch('http://localhost:3000/')
+    await fetch('https://still-pond-6102.fly.dev/')
     .then(resp => resp.json())
     .then(function(response) {
       setPosts(response)

@@ -74,7 +74,7 @@ const Home = () => {
           <h1>APEX PREDATORS</h1>
         </header>
       </div>
-      <div>
+      <div className='latest'>
         <h3>LATEST POSTS</h3>
         <ul>
         {posts.length > 0 && posts.map((post) => {

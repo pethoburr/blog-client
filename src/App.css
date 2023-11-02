@@ -5,24 +5,79 @@ body {
 
 .titleContainer {
   display: flex;
+  flex-direction: column;
   position: relative;
   background-image: url('./assets/swimtiger.jpg');
   background-size: cover;
   background-position: center;
   width: 98.9vw;
-  height: 97vh;
+  height: 100vh;
+}
+
+.head {
+  position: fixed;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  z-index: 0;
+  width: 100%;
+  height: 6rem;
+}
+
+h1 {
+  margin: 1rem;
+}
+
+.headScroll {
+  position: fixed;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  z-index: 0;
+  width: 100%;
+  height: 6rem;
+  background-color: rgb(157, 237, 247);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .navOpened {
-  width: 8rem;
+  background-color: rgb(157, 237, 247);
+  display: flex;
+  position: fixed;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 10rem;
   z-index: 1;
+  transition: 0.5s ease-out;
+  box-shadow: 12px 2px 12px -2px rgba(0,0,0,0.57);
+}
+
+#CloseIcon {
+  color: blue;
 }
 
 .login, .logout {
   display: flex;
+  justify-content: space-around;
   height: 100%;
   flex-direction: column;
-  padding: 2rem;
+  
+}
+
+.in, .out {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  font-size: 2rem;
+  color: darkorange;
+  justify-content: center;
+}
+
+.in:hover, .out:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .navClosed {
@@ -31,29 +86,24 @@ body {
   width: 0;
   top: 0;
   left: 0;
-  padding: 1rem;
   overflow-y: hidden;
-  transition: 0.5s;
 }
 
-h1 {
-  padding: 1rem;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  margin-bottom: 6rem;
-  margin-right: 13rem;
-}
+
 
 .login {
   display: flex;
   gap: 1rem;
-  padding-left: 1rem;
+  width: 100%;
 }
 
 .menuIcon {
+  position: fixed;
+  top: 0;
+  left: 0;
   padding: 1.5rem;
   max-width: min-content;
+  justify-self: flex-start !important;
 }
 
 .MuiSvgIcon-root {

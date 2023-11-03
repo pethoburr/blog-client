@@ -1,5 +1,5 @@
 import '../App.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect, useContext } from 'react'
 import { AuthContext } from '../App'
 import MenuIcon from '@mui/icons-material/Menu';
@@ -8,6 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const Home = () => {
   const [slide, setSlide] = useState(false)
+  const navigate = useNavigate()
   const [posts, setPosts] = useState([])
   const [navbars, setNavbars] = useState(false)
   const { token, logout } = useContext(AuthContext)
@@ -16,6 +17,13 @@ const Home = () => {
     await fetch('https://still-pond-6102.fly.dev/')
     .then(resp => resp.json())
     .then(function(response) {
+      const jayed = JSON.stringify(response)
+      console.log(`jayed: ${jayed}`)
+      response.map((post) => {
+        const copy = post.text
+        const sub = copy.substring(0, 140)
+        post.text = sub
+      })
       setPosts(response)
     })
     .catch(function(err) {
@@ -54,6 +62,10 @@ const Home = () => {
     console.log(`navbars: ${navbars}`)
   })
 
+  const toPost = (id) => {
+    navigate(`/posts/${id}`)
+  }
+
   return (
     <>
       <div className='titleContainer'>
@@ -81,8 +93,11 @@ const Home = () => {
           return(
             <li key={post._id}>
               <div>{post.title}</div>
+              <div>{post.author}</div>
+              <div>{post.time}</div>
               <div>{post.topic.title}</div>
-              <div>{post.text}</div>
+              <div>{post.text}...</div>
+              { token ? <button onClick={() => toPost(post._id)}>Continue Reading</button> : <Link to='/log-in'>Log in to continue reading</Link>}
             </li>
             )
           })}

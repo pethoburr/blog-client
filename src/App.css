@@ -28,7 +28,8 @@ ul {
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
   align-self: center;
-  width: 70%;
+  width: 100%;
+  
 }
 
 li {

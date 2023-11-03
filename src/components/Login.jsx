@@ -31,7 +31,7 @@ const Login = () => {
             .then((response) => {
                 console.log(response.token)
                 login(response.token)
-                navigate('/posts')
+                navigate('/')
             })
             .catch(err => console.log(err))
     }

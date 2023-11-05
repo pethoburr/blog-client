@@ -10,7 +10,7 @@ const Posts = () => {
 
   const getPosts = () => {
     console.log(`token: ${token}`)
-    fetch('https://still-pond-6102.fly.dev/posts', {
+    fetch('http://localhost:3000/posts', {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -51,7 +51,12 @@ const Posts = () => {
      <ul>
       {posts.length > 0 && posts.map((post) => {
         return(
-            <li key={post._id} onClick={() => {handleClick(post._id)}}>{post.title}: {post.text}</li>
+            <li key={post._id} onClick={() => {handleClick(post._id)}}>
+              <p>{post.title}</p>
+              <p>{post.author}</p>
+              <p>{post.time}</p>
+              <p dangerouslySetInnerHTML={{ __html: post.text}} />
+            </li>
         )
       })}
      </ul>

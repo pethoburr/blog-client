@@ -59,7 +59,6 @@ const Home = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', changeHeaderBackground)
-    console.log(`navbars: ${navbars}`)
   })
 
   const toPost = (id) => {
@@ -71,15 +70,14 @@ const Home = () => {
       <div className='titleContainer'>
         <nav className={ slide ? 'navOpened' : 'navClosed'}>
         <CloseIcon sx={{ color: 'darkorange', justifySelf: 'flex-end'}} fontSize='large' onClick={() => toggleSidebar()}/>
-          <div className='login'>
-          { !token && <Link to='/log-in' className='in'>Log in</Link> }
-          { !token && <Link to='/sign-up' className='out'>Sign up</Link>}
-          </div>
-          <div className='logout'>
-            { token && <button onClick={logOut}>Logout</button>}
-            { token && <Link to='/posts'>Posts</Link>}
-            { token && <Link to='/topics'>Topics</Link>}
-          </div>
+        { !token ? <div className='login'>
+            <Link to='/log-in' className='in'>Log in</Link> 
+            <Link to='/sign-up' className='out'>Sign up</Link>
+          </div> : <div className='logout'>
+            <button onClick={logOut} className='logOutBtn'>Logout</button>
+            <Link to='/posts' className='post'>Posts</Link>
+            <Link to='/topics' className='topic'>Topics</Link>
+          </div>}
         </nav>
         <header className={ navbars ? 'headScroll' : 'head'}>
           <div className='menuIcon'>{ !slide && <MenuIcon sx={{ color: 'darkorange' }} fontSize='large' onClick={() => toggleSidebar()} /> }</div>
@@ -92,12 +90,12 @@ const Home = () => {
         {posts.length > 0 && posts.map((post) => {
           return(
             <li key={post._id}>
-              <div>{post.title}</div>
-              <div>{post.author}</div>
-              <div>{post.time}</div>
-              <div>{post.topic.title}</div>
-              <div>{post.text}...</div>
-              { token ? <button onClick={() => toPost(post._id)}>Continue Reading</button> : <Link to='/log-in'>Log in to continue reading</Link>}
+              <div className='title'>{post.title}</div>
+              <div className='author'>{post.author}</div>
+              <div className='time'>{post.time}</div>
+              <div className='topicTitle'>{post.topic.title}</div>
+              <div className='text'>{post.text}...</div>
+              { token ? <button onClick={() => toPost(post._id)} className='continue'>Continue Reading</button> : <Link to='/log-in' className='loginContinue'>Log in to continue reading</Link>}
             </li>
             )
           })}

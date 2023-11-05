@@ -1,5 +1,6 @@
 body {
   padding: 0;
+  overflow-x: hidden;
   margin: 0;
 }
 
@@ -10,7 +11,7 @@ body {
   background-image: url('./assets/swimtiger.jpg');
   background-size: cover;
   background-position: center;
-  width: 98.9vw;
+  width: 100vw;
   height: 100vh;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -22,6 +23,39 @@ body {
 
 }
 
+.title {
+  font-size: 1.5rem;
+  padding-bottom: .5rem;
+}
+
+.author {
+  font-weight: bolder;
+}
+
+.time {
+  font-style: italic;
+  color: #8c8c8c;
+}
+
+.text {
+  padding-top: 1rem;
+}
+
+.continue, .loginContinue {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  color: #646cff;
+  width: max-content;
+  border: none;
+  border-radius: 0;
+}
+
+.continue:hover, .loginContinue:hover {
+  color: darkorange;
+  border-bottom: 2px solid darkorange;
+}
+
 ul {
   list-style: none;
   display: grid;
@@ -29,10 +63,11 @@ ul {
   place-items: center;
   align-self: center;
   width: 100%;
-  
 }
 
 li {
+  display: flex;
+  flex-direction: column;
   margin: 1rem;
   padding: 2rem;
   width: 50%;
@@ -102,17 +137,17 @@ h1 {
 
 .login, .logout {
   display: flex;
-  justify-content: space-around;
   height: 100%;
   flex-direction: column;
-  
+  gap: 1rem;
+  width: 100%;
 }
 
 nav {
   transition: transform 0.5s ease-in-out;
 }
 
-.in, .out {
+.in, .out, .post, .topic {
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -122,8 +157,22 @@ nav {
   justify-content: center;
 }
 
-.in:hover, .out:hover {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+.logOutBtn {
+  display: flex;
+  justify-content: center;
+  color: darkorange;
+  width: 100%;
+  background-color: transparent;
+  margin: 1rem;
+  border: none;
+  border-radius: 0;
+  margin-left: 0;
+  font-size: 2rem;
+}
+
+.in:hover, .out:hover, .logOutBtn:hover, .post:hover, .topic:hover {
+  color: blue;
+  border-left: 4px solid blue;
 }
 
 .navClosed {
@@ -133,14 +182,6 @@ nav {
   top: 0;
   left: 0;
   overflow-y: hidden;
-}
-
-
-
-.login {
-  display: flex;
-  gap: 1rem;
-  width: 100%;
 }
 
 .menuIcon {

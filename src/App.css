@@ -1,7 +1,9 @@
-body {
+body, #root {
   padding: 0;
   overflow-x: hidden;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .titleContainer {
@@ -15,6 +17,30 @@ body {
   height: 100vh;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
+.others {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-grow: 2;
+}
+
+.follow {
+  grid-column: 1 / -1;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.company, .legal, .sitemap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
 
 .latest {
   margin-top: 10rem;
@@ -41,19 +67,61 @@ body {
   padding-top: 1rem;
 }
 
+h5 {
+  display: flex;
+  align-items: center;
+  flex-shrink: 1;
+}
+
 .continue, .loginContinue {
   padding: 0;
   margin: 0;
   display: flex;
-  color: #646cff;
+  color: rgb(13, 107, 49);
   width: max-content;
   border: none;
   border-radius: 0;
 }
 
 .continue:hover, .loginContinue:hover {
-  color: darkorange;
-  border-bottom: 2px solid darkorange;
+  color: rgb(13, 107, 49);
+  border-bottom: 2px solid rgb(13, 107, 49);
+}
+
+.bottomContainer {
+  color: white;
+  display: flex;
+  background-color: rgb(128, 126, 126);
+  background-size: cover;
+  width: 100vw;
+  max-height: 80vh;
+}
+
+.btm:hover, .btmLinks:hover {
+  box-shadow: none;
+  color: rgb(7, 241, 7);
+  cursor: pointer;
+}
+.btm {
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+h6 {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-size: 1.3rem;
+  border-bottom: 1px solid white;
 }
 
 ul {
@@ -82,11 +150,11 @@ h3 {
   display: flex;
   justify-content: center;
   font-size: 3rem;
-  color: darkorange;
+  color: rgb(13, 107, 49);
   padding-top: 2rem;
   padding-bottom: 2rem;
   font-style: italic;
-  background-color: rgb(157, 237, 247);
+  background-color: rgba(87, 90, 90, 0.3);
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
@@ -113,12 +181,12 @@ h1 {
   z-index: 0;
   width: 100%;
   height: 6rem;
-  background-color: rgb(157, 237, 247);
+  background-color: rgba(192, 194, 194, 0.3);
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .navOpened {
-  background-color: rgb(157, 237, 247);
+  background-color: white;
   display: flex;
   position: fixed;
   height: 100%;
@@ -132,7 +200,7 @@ h1 {
 }
 
 #CloseIcon {
-  color: blue;
+  color: rgb(13, 107, 49);
 }
 
 .login, .logout {
@@ -153,14 +221,14 @@ nav {
   padding-bottom: 1rem;
   display: flex;
   font-size: 2rem;
-  color: darkorange;
+  color: rgb(13, 107, 49);
   justify-content: center;
 }
 
 .logOutBtn {
   display: flex;
   justify-content: center;
-  color: darkorange;
+  color: rgb(2, 70, 47);
   width: 100%;
   background-color: transparent;
   margin: 1rem;
@@ -170,9 +238,17 @@ nav {
   font-size: 2rem;
 }
 
+.btmLinks {
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
 .in:hover, .out:hover, .logOutBtn:hover, .post:hover, .topic:hover {
-  color: blue;
-  border-left: 4px solid blue;
+  color: rgb(17, 153, 78);
+  background-color: rgba(102, 103, 104, 0.1);
+  border-right: 6px solid rgb(13, 107, 49);
+  box-shadow: 6px 2px 6px -2px rgba(13, 107, 0, 0.77);
 }
 
 .navClosed {
@@ -198,5 +274,5 @@ nav {
 .MuiSvgIcon-root:hover {
   cursor: pointer;
   border-radius: 2rem;
-  background-color: rgba(139, 208, 230, 0.4)
+  background-color: rgba(102, 103, 104, 0.1)
 }

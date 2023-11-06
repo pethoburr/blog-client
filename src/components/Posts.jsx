@@ -10,7 +10,7 @@ const Posts = () => {
 
   const getPosts = () => {
     console.log(`token: ${token}`)
-    fetch('http://localhost:3000/posts', {
+    fetch('https://still-pond-6102.fly.dev/posts', {
       headers: {
         'Authorization': `Bearer ${token}`
       }

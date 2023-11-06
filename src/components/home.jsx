@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from 'react'
 import { AuthContext } from '../App'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import Bottom from './Bottom'
 
 
 const Home = () => {
@@ -32,7 +33,6 @@ const Home = () => {
   }
 
   useEffect(() => {
-    console.log(token)
     getPosts()
   },[])
 
@@ -41,7 +41,6 @@ const Home = () => {
   }
 
   const toggleSidebar = () => {
-    console.log('clicked')
     slide ? setSlide(false) : setSlide(true)
   }
 
@@ -69,7 +68,7 @@ const Home = () => {
     <>
       <div className='titleContainer'>
         <nav className={ slide ? 'navOpened' : 'navClosed'}>
-        <CloseIcon sx={{ color: 'darkorange', justifySelf: 'flex-end'}} fontSize='large' onClick={() => toggleSidebar()}/>
+        <CloseIcon sx={{ color: 'green', justifySelf: 'flex-end'}} fontSize='large' onClick={() => toggleSidebar()}/>
         { !token ? <div className='login'>
             <Link to='/log-in' className='in'>Log in</Link> 
             <Link to='/sign-up' className='out'>Sign up</Link>
@@ -80,7 +79,7 @@ const Home = () => {
           </div>}
         </nav>
         <header className={ navbars ? 'headScroll' : 'head'}>
-          <div className='menuIcon'>{ !slide && <MenuIcon sx={{ color: 'darkorange' }} fontSize='large' onClick={() => toggleSidebar()} /> }</div>
+          <div className='menuIcon'>{ !slide && <MenuIcon sx={{ color: 'green' }} fontSize='large' onClick={() => toggleSidebar()} /> }</div>
           <h1>APEX PREDATORS</h1>
         </header>
       </div>
@@ -101,6 +100,7 @@ const Home = () => {
           })}
         </ul>
       </div>
+      <Bottom />
     </>
   )
 }

@@ -2,6 +2,7 @@ import '../App.css'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useContext, useState } from 'react'
 import { AuthContext } from '../App'
+import Bottom from './Bottom'
 
 const Topic = () => {
     const { id } = useParams()
@@ -52,6 +53,7 @@ const Topic = () => {
                     <div onClick={() => {handleClick(post._id)}} key={post._id}>{post.title}</div>
                 )
             })}
+            <Bottom />
         </>
     )
 }

@@ -3,6 +3,7 @@ import Comment from '../components/Comments'
 import { useEffect, useState, useContext } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../App'
+import Bottom from './Bottom'
 
 const Post = () => {
   const { id } = useParams()
@@ -107,6 +108,7 @@ const Post = () => {
       </label>
       <button type='submit'>Add comment</button>
      </form>
+     <Bottom />
     </>
   )
 }

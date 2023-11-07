@@ -161,7 +161,7 @@ h3 {
 .head {
   position: fixed;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: flex-start;
   z-index: 0;
   width: 100%;
@@ -169,7 +169,7 @@ h3 {
 }
 
 h1 {
-  margin: 1rem;
+  display: flex;
   flex-grow: 2;
 }
 
@@ -239,7 +239,7 @@ nav {
 }
 
 img {
-  width: 55vw;
+  width: 50vw;
 }
 
 form {
@@ -268,7 +268,7 @@ form {
 
 .form-control:focus {
   border-color: green;
-  box-shadow: -1px 3px 18px 4px rgba(13,107,0,0.75);
+  box-shadow: -1px 2px 14px -3px rgba(13,107,0,1);
 }
 
 .btn-primary:hover {
@@ -278,6 +278,7 @@ form {
 
 h2 {
   color: green;
+  font-size: 5rem;
 }
 
 a {
@@ -294,7 +295,7 @@ a {
   color: rgb(17, 153, 78);
   background-color: rgba(102, 103, 104, 0.1);
   border-right: 6px solid rgb(13, 107, 49);
-  box-shadow: 6px 2px 6px -2px rgba(13, 107, 0, 0.77);
+  box-shadow: 9px 1px 14px -5px rgba(13,107,0,1);
 }
 
 .navClosed {
@@ -307,6 +308,7 @@ a {
 }
 
 .menuIcon {
+  display: flex;
   flex-shrink: 1;
   padding: 1.5rem;
   max-width: min-content;

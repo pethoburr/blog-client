@@ -1,6 +1,7 @@
 import '../App.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import Bear from '../assets/grizzly.jpg'
 
 const Signup = () => {
   const [first, setFirst] = useState('')
@@ -21,9 +22,9 @@ const Signup = () => {
     setPassword(e.target.value)
   }
   
-  const addUser = async (e) => {
+  const addUser = (e) => {
     console.log(e.target)
-    await fetch('https://still-pond-6102.fly.dev/sign-up', { 
+      fetch('http://localhost:3000/sign-up', { 
         mode: 'cors',
         method: 'POST',
         headers: {
@@ -38,29 +39,48 @@ const Signup = () => {
         })
         .then((response) => {
             response.json()
-            }
-        )
-        .catch(err => console.log(err))
+        })
+        .then((resp) => {
+          console.log(resp)
+        })
+        .catch((err) => console.log(err))
 }
 
   return (
     <>
-     <h1>Sign up</h1>
-     <form method='POST' action='https://still-pond-6102.fly.dev/sign-up'>
-      <label htmlFor='first_name'>
-        <input type='text' required name='first_name' onChange={handleFirst} id='first_name' placeholder='enter first name' />
-      </label>
-      <label htmlFor='last_name'>
-        <input type='text' required name='last_name' onChange={handleLast} id='last_name' placeholder='enter last name' />
-      </label>
-      <label htmlFor='username'>
-        <input type='text' required name='username' onChange={handleUser} id='username' placeholder='enter username' />
-      </label>
-      <label htmlFor='password'>
-        <input type='password' required name='password' onChange={handlePass} id='password' placeholder='enter password' />
-      </label>
-      <button type='submit' onClick={(e) => {addUser(e)}}>Submit</button><div>Already have an account?<Link to='/log-in'>Log in</Link></div>
-     </form>
+      <div className="formContainer">
+        <img src={Bear} alt="Grizzly Bear" />
+        <div className="form">
+            <form method='POST' className='was-validated' action='https://still-pond-6102.fly.dev/sign-up'>
+            <h2>Sign up</h2>
+            <div className="form-floating mb-3">
+              <input type='text' required name='first_name' className='form-control' onChange={handleFirst} id='first_name' placeholder='enter first name' />
+              <label htmlFor='first_name'>First Name</label>
+              <div className="valid-feedback">Valid.</div>
+              <div className="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div className="form-floating mb-3">
+              <input type='text' required name='last_name' className='form-control' onChange={handleLast} id='last_name' placeholder='enter last name' />
+              <label htmlFor='last_name'>Last Name</label>
+              <div className="valid-feedback">Valid.</div>
+              <div className="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div className="form-floating mb-3">
+              <input type='text' required name='username'className='form-control' onChange={handleUser} id='username' placeholder='enter username' />
+              <label htmlFor='username'>Username</label>
+              <div className="valid-feedback">Valid.</div>
+              <div className="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div className="form-floating mb-3">
+              <input type='password' required name='password' className='form-control' onChange={handlePass} id='password' placeholder='enter password' />
+              <label htmlFor='password'>Password</label>
+              <div className="valid-feedback">Valid.</div>
+              <div className="invalid-feedback">Please fill out this field.</div>
+            </div>
+              <button type='submit' className='btn btn-primary' onClick={(e) => {addUser(e)}}>Submit</button><div>Already have an account?<Link to='/log-in'>Log in</Link></div>
+            </form>
+          </div>
+      </div>
     </>
   )
 }

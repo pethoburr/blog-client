@@ -68,7 +68,7 @@ const Home = () => {
     <>
       <div className='titleContainer'>
         <nav className={ slide ? 'navOpened' : 'navClosed'}>
-        <CloseIcon sx={{ color: 'green', justifySelf: 'flex-end'}} fontSize='large' onClick={() => toggleSidebar()}/>
+        <CloseIcon sx={{ color: 'green', justifySelf: 'flex-end', fontSize: '4rem'}} onClick={() => toggleSidebar()}/>
         { !token ? <div className='login'>
             <Link to='/log-in' className='in'>Log in</Link> 
             <Link to='/sign-up' className='out'>Sign up</Link>
@@ -79,7 +79,7 @@ const Home = () => {
           </div>}
         </nav>
         <header className={ navbars ? 'headScroll' : 'head'}>
-          <div className='menuIcon'>{ !slide && <MenuIcon sx={{ color: 'green' }} fontSize='large' onClick={() => toggleSidebar()} /> }</div>
+          <div className='menuIcon'>{ !slide && <MenuIcon sx={{ color: 'green', fontSize: '4rem' }}  onClick={() => toggleSidebar()} /> }</div>
           <h1>APEX PREDATORS</h1>
         </header>
       </div>

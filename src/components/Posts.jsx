@@ -2,6 +2,7 @@ import '../App.css'
 import { useEffect, useState, useContext } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { AuthContext } from '../App'
+import Bottom from './Bottom'
 
 const Posts = () => {
   const navigate = useNavigate()
@@ -60,6 +61,7 @@ const Posts = () => {
         )
       })}
      </ul>
+     <Bottom />
     </>
   )
 }

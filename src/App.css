@@ -238,6 +238,52 @@ nav {
   font-size: 2rem;
 }
 
+img {
+  width: 55vw;
+}
+
+form {
+  width: 50%;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.btn-primary {
+  width: max-content;
+  color: green;
+  background-color: white;
+  border: 2px solid green;
+}
+
+.form-control:focus {
+  border-color: green;
+  box-shadow: -1px 3px 18px 4px rgba(13,107,0,0.75);
+}
+
+.btn-primary:hover {
+  color: white;
+  background-color: green;
+}
+
+h2 {
+  color: green;
+}
+
+a {
+  color: green !important;
+}
+
 .btmLinks {
   color: white;
   font-size: 1rem;

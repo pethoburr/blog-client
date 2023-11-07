@@ -2,6 +2,7 @@ import '../App.css'
 import { useState,useContext } from 'react'
 import { Link, useNavigate  } from 'react-router-dom'
 import { AuthContext } from '../App'
+import Lion from '../assets/lionroar.jpg'
 
 const Login = () => {
     const [username, setUsername] = useState('')
@@ -46,16 +47,23 @@ const Login = () => {
 
   return (
     <>
-    <h1>Log In</h1>
-     <form method='POST' action='https://still-pond-6102.fly.dev/log-in'>
-        <label htmlFor='username'>
-            <input type='text' id='username' name='username' required onChange={(e) => {handleUserNameChange(e)}} placeholder='enter username' />
-        </label>
-        <label htmlFor='password'>
-            <input type='text' id='password' required onChange={(e) => {handlePasswordChange(e)}} name='password' placeholder='enter password' />
-        </label>
-        <button type='submit' onClick={(e) => {auth(e)}}>Log in</button><div>Dont have an account?<Link to='/sign-up'>Sign up</Link></div>
-     </form>
+    <div className="formContainer">
+        <img src={Lion} alt="Lion roaring" />
+        <div className="form">
+            <form method='POST' action='https://still-pond-6102.fly.dev/log-in'>
+                <h2>Log In</h2>
+                <div className="form-floating mb-3">
+                    <input type='text' id='username' name='username' className='form-control' required onChange={(e) => {handleUserNameChange(e)}} placeholder='enter username' />
+                    <label htmlFor='username'>Username</label>
+                </div>
+                <div className="form-floating mb-3">
+                    <input type='text' id='password' className='form-control' required onChange={(e) => {handlePasswordChange(e)}} name='password' placeholder='enter password' />
+                    <label htmlFor='password'>Password</label>
+                </div>
+                <button type='submit' className='btn btn-primary' onClick={(e) => {auth(e)}}>Log in</button><div>Dont have an account?<Link to='/sign-up'>Sign up</Link></div>
+            </form>
+        </div>
+    </div>
     </>
   )
 }

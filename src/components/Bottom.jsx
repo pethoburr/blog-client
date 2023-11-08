@@ -15,7 +15,6 @@ const Bottom = () => {
     const { token } = useContext(AuthContext)
 
     useEffect(() => {
-        console.log('bottom token:' + token)
         if (token) {
             setLoggedIn(true)
         }
@@ -26,7 +25,7 @@ const Bottom = () => {
             <div className='bottomContainer'>
                 <h5>Apex Predators Blog</h5>
                 <div className='others'>
-                    <div className='follow'>Follow us <FacebookIcon sx={{ "&:hover": { color: 'lightgreen' }}} /><InstagramIcon sx={{ "&:hover": { color: 'lightgreen' }}} /><LinkedInIcon sx={{ "&:hover": { color: 'lightgreen' }}} /><TwitterIcon sx={{ "&:hover": { color: 'lightgreen' }}} /><GitHubIcon sx={{ "&:hover": { color: 'lightgreen' }}} /><PinterestIcon sx={{ "&:hover": { color: 'lightgreen' }}} /><YouTubeIcon sx={{ "&:hover": { color: 'lightgreen' }}} /></div>
+                    <div className='follow'>Follow us <FacebookIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><InstagramIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><LinkedInIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><TwitterIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><GitHubIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><PinterestIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><YouTubeIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /></div>
                     <ul className='company'>
                         <h6>Company</h6>
                         <li className='btm'>Subscribe</li>

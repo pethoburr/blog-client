@@ -18,8 +18,6 @@ const Home = () => {
     await fetch('https://still-pond-6102.fly.dev/')
     .then(resp => resp.json())
     .then(function(response) {
-      const jayed = JSON.stringify(response)
-      console.log(`jayed: ${jayed}`)
       response.map((post) => {
         const copy = post.text
         const sub = copy.substring(0, 140)

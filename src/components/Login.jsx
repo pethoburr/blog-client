@@ -21,7 +21,7 @@ const Login = () => {
             username: username,
             password: password
         }
-        fetch('http://localhost:3000/log-in', { 
+        fetch('https://still-pond-6102.fly.dev/log-in', { 
             mode: 'cors',
             method: 'POST',
             headers: {
@@ -91,14 +91,14 @@ const Login = () => {
                 <div className="form-floating mb-3">
                     <input type='text' id='username' name='username' className={userClass} required onChange={(e) => {handleUserNameChange(e)}} placeholder='enter username' />
                     <label htmlFor='username'>Username</label>
-                    { userError ? <div >Incorrect username</div> : ''}
+                    { userError && <div className='invalid-feedback' >Incorrect username</div>}
                 </div>
                 <div className="form-floating mb-3">
-                    <input type='text' id='password' className={passClass} required onChange={(e) => {handlePasswordChange(e)}} name='password' placeholder='enter password' />
+                    <input type='password' id='password' className={passClass} required onChange={(e) => {handlePasswordChange(e)}} name='password' placeholder='enter password' />
                     <label htmlFor='password'>Password</label>
-                    { passError ? <div >Incorrect password</div> : ''}
+                    { passError && <div className='invalid-feedback' >Incorrect password</div>}
                 </div>
-                { bothError ? <div className='bothErr'>Missing credentials</div> : ''}
+                { bothError && <div className='bothErr'>Missing credentials</div>}
                 <button type='submit' className='btn btn-primary' onClick={(e) => {auth(e)}}>Log in</button><div>Dont have an account?<Link to='/sign-up'>Sign up</Link></div>
             </form>
         </div>

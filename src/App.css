@@ -253,6 +253,11 @@ form {
   align-items: center;
 }
 
+.bothErr {
+  color: darkred;
+  margin-bottom: 1rem;
+}
+
 .formContainer {
   display: flex;
   width: 100vw;
@@ -271,10 +276,11 @@ form {
   box-shadow: -1px 2px 14px -3px rgba(13,107,0,1);
 }
 
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus-visible {
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus-visible, .btn-primary:active {
   color: white;
   background-color: green;
   box-shadow: -1px 2px 14px -3px rgba(13,107,0,1);
+  border-color: green;
   
 }
 

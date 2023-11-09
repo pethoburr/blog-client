@@ -284,6 +284,23 @@ form {
   
 }
 
+.passFail {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.passie {
+  margin: 0;
+}
+
+.fail, .pass {
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
 h2 {
   color: green;
   font-size: 5rem;
@@ -331,4 +348,20 @@ a {
   cursor: pointer;
   border-radius: 2rem;
   background-color: rgba(102, 103, 104, 0.1)
+}
+
+.fail {
+  width: 100%;
+}
+
+.fail:before {
+  position: relative;
+  left: -35px;
+  content: "\2717";
+}
+
+.pass:before {
+  position: relative;
+  left: -35px;
+  content: "\2713";
 }

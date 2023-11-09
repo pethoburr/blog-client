@@ -1,6 +1,6 @@
 import '../App.css'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Bear from '../assets/grizzly.jpg'
 
 const Signup = () => {
@@ -16,6 +16,11 @@ const Signup = () => {
   const [lastClass, setLastClass] = useState('form-control')
   const [userClass, setUserClass] = useState('form-control')
   const [passClass, setPassClass] = useState('form-control')
+  const [focused, setFocused] = useState(false)
+  const [lowerValidated, setLowerValidated] = useState(false)
+  const [upperValidated, setUpperValidated] = useState(false)
+  const [numberValidated, setNumberValidated] = useState(false)
+  const [minValidated, setMinValidated] = useState(false)
 
   const handleFirst = (e) => {
     setFirst(e.target.value)
@@ -28,7 +33,50 @@ const Signup = () => {
   }
   const handlePass = (e) => {
     setPassword(e.target.value)
+    
   }
+
+  const onFocus = () => {
+    setFocused(true)
+  }
+
+  const onBlur = () => {
+    setFocused(false)
+  }
+
+  useEffect(() => {
+    const lowerCaseLetters = /[a-z]/g;
+    const upperCaseLetters = /[A-Z]/g;
+    const numbers = /[0-9]/g;
+    if (password.match(lowerCaseLetters)) {
+      setLowerValidated(true)
+    } else {
+      setLowerValidated(false)
+    }
+    if (password === '') {
+      setLowerValidated(false)
+      setUpperValidated(false)
+      setNumberValidated(false)
+      setMinValidated(false)
+    }
+    if (password.match(upperCaseLetters)) {
+      setUpperValidated(true)
+    } else {
+      setUpperValidated(false)
+    }
+    if (password.match(numbers)) {
+      setNumberValidated(true)
+    } else {
+      setNumberValidated(false)
+    }
+    if (password.length >= 8) {
+      setMinValidated(true)
+    } else {
+      setMinValidated(false)
+    }
+  },[password])
+
+
   
   const addUser = (e) => {
     e.preventDefault()
@@ -107,9 +155,9 @@ const Signup = () => {
               { userErr && <div className="invalid-feedback">Unique username required.</div> }
             </div>
             <div className="form-floating mb-3">
-              <input type='password' required name='password' className={passClass} onChange={handlePass} id='password' placeholder='enter password' />
+              <input type='password' required name='password' className={passClass} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onChange={handlePass} onFocus={onFocus} onBlur={onBlur} id='password' placeholder='enter password' />
               <label htmlFor='password'>Password</label>
-              { passErr && <div className="invalid-feedback">Password.</div> }
+              { focused && <div className="passContainer"><p className='passie'>Password must contain the following:</p><ul className='passFail'><li className={ lowerValidated ? 'pass' : 'fail'} id='lower'>A lowercase letter</li><li className={ upperValidated ? 'pass' : 'fail'} id='upper'>A capital (uppercase) letter</li><li className={ numberValidated ? 'pass' : 'fail'} id='num'>A number</li><li className={ minValidated ? 'pass' : 'fail'} id='minimum'>Minimum 8 characters</li></ul></div> }
             </div>
               <button type='submit' className='btn btn-primary' onClick={(e) => {addUser(e)}}>Submit</button><div>Already have an account?<Link to='/log-in'>Log in</Link></div>
             </form>

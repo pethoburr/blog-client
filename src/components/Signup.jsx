@@ -1,5 +1,5 @@
 import '../App.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Bear from '../assets/grizzly.jpg'
 
@@ -24,6 +24,8 @@ const Signup = () => {
   const [upperValidated, setUpperValidated] = useState(false)
   const [numberValidated, setNumberValidated] = useState(false)
   const [minValidated, setMinValidated] = useState(false)
+  const [userTaken, setUserTaken] = useState(null)
+  const navigate = useNavigate()
 
   const handleFirst = (e) => {
     setFirst(e.target.value)
@@ -72,7 +74,11 @@ const Signup = () => {
     } else {
       setUserClass('form-control is-invalid')
     }
-  },[username])
+    if (userTaken) {
+      setUserErr(true)
+      setUserClass('form-control is-invalid')
+    }
+  },[username, userTaken])
 
   useEffect(() => {
     if (password === confirm) {
@@ -86,7 +92,7 @@ const Signup = () => {
       setConfirmClass(false)
     }
     if (confirm === '') {
-      //setConfirmClass('form-control is-invalid')
+      setConfirmClass('form-control is-invalid')
     }
   },[confirm, password])
 
@@ -144,7 +150,8 @@ const Signup = () => {
       username: username,
       password: password
     }
-      fetch('https://still-pond-6102.fly.dev/sign-up', { 
+    console.log('user: ' + username)
+      fetch('http://localhost:3000/sign-up', { 
         mode: 'cors',
         method: 'POST',
         headers: {
@@ -156,7 +163,13 @@ const Signup = () => {
         .then((resp) => {
           const jayed = JSON.stringify(resp)
           console.log('resp:' + jayed)
-          setFirstErr(false)
+          if (resp.message) {
+            return setUserTaken(resp.message)
+          }
+          if (resp.first_name) {
+            navigate('/log-in')
+          } else {
+            setFirstErr(false)
           setPassErr(false)
           setUserErr(false)
           setLastErr(false)
@@ -206,6 +219,7 @@ const Signup = () => {
               setPassClass('form-control is-invalid')
             }
           })
+          }
         })
         .catch((err) => console.log(err))
 }
@@ -230,7 +244,7 @@ const Signup = () => {
             <div className="form-floating mb-3">
               <input type='text' required name='username'className={userClass} onChange={handleUser} id='username' placeholder='enter username' />
               <label htmlFor='username'>Username</label>
-              { userErr && <div className="invalid-feedback">Unique username required.</div> }
+              { userErr && <div className="invalid-feedback">{userTaken ? 'Username taken' : 'Unique username required.'}</div> }
             </div>
             <div className="form-floating mb-3">
               <input type='password' required name='password' className={passClass} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onChange={handlePass} onFocus={onFocus} onBlur={onBlur} id='password' placeholder='enter password' />

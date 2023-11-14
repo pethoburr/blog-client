@@ -92,6 +92,7 @@ const Signup = () => {
       setConfirmClass(false)
     }
     if (confirm === '') {
+      setConfirmErr(false)
       setConfirmClass('form-control is-invalid')
     }
   },[confirm, password])
@@ -151,7 +152,7 @@ const Signup = () => {
       password: password
     }
     console.log('user: ' + username)
-      fetch('http://localhost:3000/sign-up', { 
+      fetch('https://still-pond-6102.fly.dev/sign-up', { 
         mode: 'cors',
         method: 'POST',
         headers: {

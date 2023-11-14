@@ -301,6 +301,64 @@ form {
   box-shadow: none;
 }
 
+.topicBody {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6rem;
+}
+
+.topicList {
+  display: grid;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#Bears {
+  background-image: url('./assets/bears.jpg');
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+}
+
+#Reptiles {
+  background-image: url('./assets/reptiles.jpg');
+  background-position: left top;
+  background-size: cover;
+  color: transparent;
+}
+
+#Ocean\ animals {
+  background-image: url('./assets/whales.jpg');
+  background-position: left top;
+  background-size: cover;
+  color: transparent;
+}
+
+#Big\ Cats {
+  background-image: url('./assets/bigcats.jpg');
+  background-size: cover;
+  color: transparent;
+}
+
+#Bears:hover, #Reptiles:hover, #Ocean\ animals:hover, #Big\ Cats:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  color: white;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.topicItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 h2 {
   color: green;
   font-size: 5rem;
@@ -323,6 +381,34 @@ a {
   box-shadow: 9px 1px 14px -5px rgba(13,107,0,1);
 }
 
+.topicRel {
+  display: flex;
+}
+
+.topicDescription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  color: green;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+  background-color: darkgreen;
+  color: white;
+  font-size: 2.5rem;
+  padding: 2rem;
+}
+
 .navClosed {
   height: 100%;
   position: fixed;
@@ -330,6 +416,12 @@ a {
   top: 0;
   left: 0;
   overflow-y: hidden;
+}
+
+.topicDets {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
 }
 
 .menuIcon {

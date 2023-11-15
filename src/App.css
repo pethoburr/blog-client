@@ -606,3 +606,109 @@ h4 {
   width: max-content;
   height: max-content;
 }
+
+@media (max-width: 768px) {
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .head, .headScroll {
+    background-color: rgba(15, 238, 238, 0.3);
+  }
+
+  .menuIcon {
+    padding: .5rem;
+  }
+
+  li {
+    width: 90%;
+  }
+
+  .titleContainer {
+    background-image: url('./assets/swimtigermobile.jpg');
+  }
+
+  h1 {
+    font-size: 2rem !important;
+    margin: 0;
+    color: rgb(5, 5, 5);
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  h6, .follow {
+    font-size: .75rem;
+  }
+
+  .btm, .btmLinks, .copyright  {
+    font-size: .6rem;
+  }
+
+  .follow {
+    left: 0;
+  }
+
+  .apex {
+    padding-left: 0.2rem;
+  }
+
+  .company {
+    padding: 0;
+  }
+
+  img {
+    display: none;
+  }
+
+  .topicList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #Bears {
+    display: flex;
+    font-size: 2rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-position: top;
+    color: white;
+  }
+
+  #Reptiles {
+    background-position: center;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  #Big\ Cats {
+    background-position: center;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  #Ocean\ animals {
+    display: flex;
+    font-size: 2rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: white;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .postxt {
+    max-width: 100% !important;
+  }
+}

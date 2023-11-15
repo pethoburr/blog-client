@@ -217,7 +217,9 @@ const Signup = () => {
             if (obj.path === 'password') {
               console.log(`password err: ${obj.msg}`)
               setPassErr(true)
+              setConfirmErr(true)
               setPassClass('form-control is-invalid')
+              setConfirmClass(false)
             }
           })
           }

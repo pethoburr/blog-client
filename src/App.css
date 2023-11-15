@@ -711,4 +711,8 @@ h4 {
   .postxt {
     max-width: 100% !important;
   }
+
+  form {
+    width: 90%;
+  }
 }

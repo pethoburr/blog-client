@@ -87,7 +87,7 @@ const Login = () => {
         <img src={Lion} alt="Lion roaring" />
         <div className="form">
             <form method='POST' className={ userError || passError || bothError ? '' : 'was-validated'} action='http://localhost:3000/log-in'>
-                <h2>Log In</h2>
+                <h2 className='font-effect-shadow-multiple'>Log In</h2>
                 <div className="form-floating mb-3">
                     <input type='text' id='username' name='username' className={userClass} required onChange={(e) => {handleUserNameChange(e)}} placeholder='enter username' />
                     <label htmlFor='username'>Username</label>

@@ -4,6 +4,7 @@ body, #root {
   margin: 0;
   display: flex;
   flex-direction: column;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .titleContainer {
@@ -68,6 +69,7 @@ body, #root {
 }
 
 h5 {
+  font-family: 'Kurale';
   display: flex;
   align-items: center;
   flex-shrink: 1;
@@ -99,7 +101,7 @@ h5 {
 
 .btm:hover, .btmLinks:hover {
   box-shadow: none;
-  color: rgb(7, 241, 7);
+  color: rgb(7, 241, 7) !important;
   cursor: pointer;
 }
 .btm {
@@ -169,7 +171,7 @@ h3 {
   display: flex;
   justify-content: center;
   font-size: 3rem;
-  color: rgb(13, 107, 49);
+  color: green;
   padding-top: 2rem;
   padding-bottom: 2rem;
   font-style: italic;
@@ -395,7 +397,9 @@ form {
 
 h2 {
   color: green;
-  font-size: 5rem;
+  font-size: 6rem;
+  font-family: 'Kurale';
+  padding-bottom: 1rem;
 }
 
 a {

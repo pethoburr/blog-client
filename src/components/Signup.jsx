@@ -232,7 +232,7 @@ const Signup = () => {
         <img src={Bear} alt="Grizzly Bear" />
         <div className="form">
             <form method='POST' className={ firstErr || lastErr || userErr || passErr || confirmErr ? '' : 'was-validated'} action='https://still-pond-6102.fly.dev/sign-up' noValidate>
-            <h2>Sign up</h2>
+            <h2 className='font-effect-shadow-multiple'>Sign up</h2>
             <div className="form-floating mb-3">
               <input type='text' required name='first_name' className={firstClass} onChange={handleFirst} id='first_name' placeholder='enter first name' />
               <label htmlFor='first_name'>First Name</label>

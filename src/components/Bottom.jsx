@@ -49,7 +49,7 @@ const Bottom = () => {
                     </ul>
                     <ul className='sitemap'>
                         <h6>Sitemap</h6>
-                        { loggedIn ? <><Link to='/posts' className='btmLinks'>Posts</Link><Link to='/topics' className='btmLinks'>Topics</Link></> : <><Link to='/log-in' className='btmLinks'>Log In</Link><Link to='/sign-up' className='btmLinks'>Sign Up</Link></> }
+                        { loggedIn ? <><Link to='/posts' className='btmLinks'>Posts</Link><Link to='/topics' className='btmLinks'>Topics</Link><Link to='/home' className='btmLinks'>Home</Link></> : <><Link to='/log-in' className='btmLinks'>Log In</Link><Link to='/sign-up' className='btmLinks'>Sign Up</Link></> }
                     </ul>
                 </div>  
             </div>

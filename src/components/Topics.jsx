@@ -52,6 +52,9 @@ const Topics = () => {
 
   useEffect(() => {
     getTopics()
+    if (!token) {
+      navigate('/log-in')
+    }
   },[])
 
   useEffect(() => {

@@ -39,6 +39,9 @@ const Posts = () => {
 
   useEffect(() => {
     getPosts()
+    if (!token) {
+      navigate('/log-in')
+    }
   },[])
 
   useEffect(() => {

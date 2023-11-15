@@ -31,6 +31,9 @@ const Topic = () => {
 
     useEffect(() => {
         getTopic()
+        if (!token) {
+            navigate('/log-in')
+          }
     },[])
 
     const [slide, setSlide] = useState(false)

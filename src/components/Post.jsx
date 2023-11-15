@@ -55,6 +55,9 @@ const toggleSidebar = () => {
 
   useEffect(() => {
     getPost()
+    if (!token) {
+      navigate('/log-in')
+    }
   },[])
 
   useEffect(() => {

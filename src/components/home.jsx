@@ -78,11 +78,11 @@ const Home = () => {
         </nav>
         <header className={ navbars ? 'headScroll' : 'head'}>
           <div className='menuIcon'>{ !slide && <MenuIcon sx={{ color: 'green', fontSize: '4rem' }}  onClick={() => toggleSidebar()} /> }</div>
-          <h1>APEX PREDATORS</h1>
+          <h1 >APEX PREDATORS</h1>
         </header>
       </div>
       <div className='latest'>
-        <h3>LATEST POSTS</h3>
+        <h3 className='font-effect-shadow-multiple'>LATEST POSTS</h3>
         <ul>
         {posts.length > 0 && posts.map((post) => {
           return(

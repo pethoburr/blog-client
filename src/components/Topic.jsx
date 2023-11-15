@@ -81,7 +81,7 @@ const Topic = () => {
             <div className="topicDets">
                 <h3>{topic.title}</h3>
                 <p className='topicDescription'>{topic.description}</p>
-                <h4>Posts</h4>
+                <h4>Related Posts</h4>
                 <ul className='topicRel'>
                     {posts.length > 0 && posts.map((post) => {
                     return(

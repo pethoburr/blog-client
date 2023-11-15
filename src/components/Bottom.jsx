@@ -23,7 +23,10 @@ const Bottom = () => {
     return(
         <>
             <div className='bottomContainer'>
-                <h5>Apex Predators Blog</h5>
+                <div className="apex">
+                    <h5 className='x'>Apex Predators</h5>
+                    <p className='copyright'>&copy; 2023 Maninder Pahal</p>
+                </div>
                 <div className='others'>
                     <div className='follow'>Follow us <FacebookIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><InstagramIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><LinkedInIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><TwitterIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><GitHubIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><PinterestIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /><YouTubeIcon sx={{ "&:hover": { color: 'lightgreen' }, fontSize: '2.5rem'}} /></div>
                     <ul className='company'>

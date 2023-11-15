@@ -2,6 +2,8 @@
 import '../App.css'
 import { useState, useContext } from 'react'
 import { AuthContext } from '../App'
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
 const Comment = ({ cmnt, user, up, del }) => {
     const [comment, setComment] = useState(cmnt.text)
@@ -58,9 +60,9 @@ const Comment = ({ cmnt, user, up, del }) => {
     if(editing) {
         return(
             <>
-                <form onSubmit={(e) => {handleEdit(e)}}>
-                    <input type='text' value={comment} name='text' id='text' onChange={handleEditChange}/>
-                    <button type='submit'>Update</button>
+                <form className='cmntForm' onSubmit={(e) => {handleEdit(e)}}>
+                    <input type='text' className='cmntInput' value={comment} name='text' id='text' onChange={handleEditChange}/>
+                    <button type='submit' className='submitComment'>Update</button>
                 </form>
             </>
         )
@@ -68,11 +70,16 @@ const Comment = ({ cmnt, user, up, del }) => {
         return(
             <>
                 <div className="commentContainer">
-                    <p>{cmnt.sender.username}</p>
-                    <p>{cmnt.text}</p>
-                    <p>{cmnt.time}</p>
-                    <button onClick={() => {edit()}}>Edit</button>
-                    <button onClick={() => {handleDelete()}}>Delete</button>
+                    <div className="start">
+                        <p className='name'>{cmnt.sender.username}</p>
+                        <p className='time'>{cmnt.time}</p>
+                        <p className='cmntxt'>{cmnt.text}</p>
+                    </div>
+                    <div className="eNd">
+                        <button className='editBtn' onClick={() => {edit()}}><EditOutlinedIcon sx={{ fontSize: '2.2rem'}} /></button>
+                        <button className='deleteBtn' onClick={() => {handleDelete()}}><DeleteOutlinedIcon sx={{ fontSize: '2.2rem'}} /></button>
+                    </div>
+                    
                 </div>
             </>
         )

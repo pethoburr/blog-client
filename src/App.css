@@ -611,6 +611,7 @@ h4 {
   ul {
     display: flex;
     flex-direction: column;
+    padding: 0;
   }
 
 
@@ -654,10 +655,15 @@ h4 {
 
   .apex {
     padding-left: 0.2rem;
+    width: 5rem;
   }
 
   .company {
     padding: 0;
+  }
+
+  .btm {
+    text-align: center;
   }
 
   img {

@@ -92,8 +92,7 @@ const Signup = () => {
       setConfirmClass(false)
     }
     if (confirm === '') {
-      setConfirmErr(false)
-      setConfirmClass('form-control is-invalid')
+      setConfirmClass(false)
     }
   },[confirm, password])
 
@@ -135,6 +134,8 @@ const Signup = () => {
     console.log(num)
     if (num === 4) {
       setPassClass('form-control is-valid')
+    } else {
+      setPassClass('form-control is-invalid')
     }
   },[password])
 
@@ -143,6 +144,8 @@ const Signup = () => {
   const addUser = (e) => {
     e.preventDefault()
     if (password !== confirm) {
+      setConfirmErr(false)
+      setConfirmClass(false)
       return
     }
     const data = {

@@ -509,18 +509,33 @@ h4 {
 }
 
 .fail {
+  flex-direction: row;
+  align-items: flex-start;
+  height: 100%;
   width: 100%;
+  color: red;
+}
+
+.pass {
+  width: 100%;
+  flex-direction: row;
+  color: green;
+}
+
+.pass:hover, .fail:hover {
+  box-shadow: none;
 }
 
 .fail:before {
   position: relative;
-  left: -35px;
+  left: -25px;
   content: "\2717";
 }
 
 .pass:before {
+  color: green;
   position: relative;
-  left: -35px;
+  left: -25px;
   content: "\2713";
 }
 
@@ -586,6 +601,10 @@ h4 {
 .cmntInput:hover, .cmntInput:focus {
   border-bottom: 2px solid green;
   background-color: #ebebeb;
+}
+
+.btm {
+  text-align: center;
 }
 
 .submitComment {

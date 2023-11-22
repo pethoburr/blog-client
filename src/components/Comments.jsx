@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 import '../App.css'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { AuthContext } from '../App'
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
 const Comment = ({ cmnt, user, up, del }) => {
     const [comment, setComment] = useState(cmnt.text)
+    const [userId, setUserId] = useState(false)
     const [editing, setEditing] = useState(false)
     const { token } = useContext(AuthContext)
 
@@ -57,6 +58,28 @@ const Comment = ({ cmnt, user, up, del }) => {
         .catch((err) => console.log(err))
     }
 
+    const getUserId = () => {
+        fetch('https://still-pond-6102.fly.dev/comments/id', {
+            mode: 'cors',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+        })
+        .then(resp => resp.json())
+        .then((resp) => {
+            console.log(`RESP: ${resp}`)
+            if (resp === cmnt.sender._id) {
+                setUserId(true)
+            }
+        })
+        .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+        getUserId()
+        console.log(`comment sender: ${cmnt.sender._id}`)
+    },[])
+
     if(editing) {
         return(
             <>
@@ -76,8 +99,8 @@ const Comment = ({ cmnt, user, up, del }) => {
                         <p className='cmntxt'>{cmnt.text}</p>
                     </div>
                     <div className="eNd">
-                        <button className='editBtn' onClick={() => {edit()}}><EditOutlinedIcon sx={{ fontSize: '2.2rem'}} /></button>
-                        <button className='deleteBtn' onClick={() => {handleDelete()}}><DeleteOutlinedIcon sx={{ fontSize: '2.2rem'}} /></button>
+                     { userId && <><button className='editBtn' onClick={() => {edit()}}><EditOutlinedIcon sx={{ fontSize: '2.2rem'}} /></button>
+                        <button className='deleteBtn' onClick={() => {handleDelete()}}><DeleteOutlinedIcon sx={{ fontSize: '2.2rem'}} /></button> </> }   
                     </div>
                     
                 </div>

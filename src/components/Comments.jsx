@@ -78,7 +78,7 @@ const Comment = ({ cmnt, user, up, del }) => {
     useEffect(() => {
         getUserId()
         console.log(`comment sender: ${cmnt.sender._id}`)
-    },[])
+    },[comment])
 
     if(editing) {
         return(

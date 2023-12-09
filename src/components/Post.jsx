@@ -80,10 +80,9 @@ const toggleSidebar = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`,
-        'credentials': 'include'
+        'Authorization': `Bearer ${token}`
     },
-
+    credentials: 'include',
     body: JSON.stringify({ text: newText}),
     })
     .then((resp) => resp.json())

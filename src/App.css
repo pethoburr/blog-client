@@ -121,8 +121,9 @@ h6 {
   display: flex;
   justify-content: center;
   padding: 0;
+  margin-bottom: .5rem !important;
   margin: 0;
-  width: 100%;
+  width: max-content;
   font-size: 1.3rem;
   border-bottom: 1px solid white;
   font-family: 'Merienda';

@@ -5,6 +5,7 @@ import { AuthContext } from '../App'
 import Bottom from './Bottom'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { PacmanLoader } from 'react-spinners'
 
 const Posts = () => {
   const navigate = useNavigate()
@@ -73,7 +74,7 @@ const Posts = () => {
         <div className="postList">
           <h3>ALL POSTS</h3>
             <ul className='postListContainer'>
-              {posts.length > 0 && posts.map((post) => {
+              {posts.length > 0 ? posts.map((post) => {
                 return(
                     <li key={post._id} className='postListItem' onClick={() => {handleClick(post._id)}}>
                       <p className='title'>{post.title}</p>
@@ -82,7 +83,7 @@ const Posts = () => {
                       <p dangerouslySetInnerHTML={{ __html: post.text}} />
                     </li>
                 )
-                })}
+                }) : <div className='pac'><PacmanLoader color='green' size={50} aria-label='Loading Spinner' />Loading...</div>}
           </ul>
         </div>
      <Bottom />

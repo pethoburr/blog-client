@@ -5,6 +5,7 @@ import { AuthContext } from '../App'
 import Bottom from './Bottom'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import HashLoader from 'react-spinners/HashLoader'
 
 const Topics = () => {
   const navigate = useNavigate()
@@ -86,11 +87,11 @@ const Topics = () => {
       <div className="topicBody">
         <h3>TOPICS</h3>
         <ul className='topicList'>
-        {topics.length > 0 && topics.map((topic) => {
+        {topics.length > 0 ? topics.map((topic) => {
           return(
               <li key={topic._id} className='topicItem' onClick={() => {handleClick(topic._id)}} id={topic.title}>{topic.title}</li>
           )
-        })}
+        }) : <div className='pac'><HashLoader size={80} color='green' />Loading...</div>}
       </ul>
       </div>
      <Bottom />

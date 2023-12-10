@@ -5,6 +5,7 @@ import { AuthContext } from '../App'
 import Bottom from './Bottom'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import CircleLoader from 'react-spinners/CircleLoader'
 
 const Topic = () => {
     const { id } = useParams()
@@ -83,7 +84,7 @@ const Topic = () => {
                 <p className='topicDescription'>{topic.description}</p>
                 <h4>Related Posts</h4>
                 <ul className='topicRel'>
-                    {posts.length > 0 && posts.map((post) => {
+                    {posts.length > 0 ? posts.map((post) => {
                     return(
                         <li key={post._id}>
                         <div className='title' onClick={() => handleClick(post._id)}>{post.title}</div>
@@ -94,7 +95,7 @@ const Topic = () => {
                         <button onClick={() => toPost(post._id)} className='continue'>Continue Reading</button>
                         </li>
                         )
-                    })}
+                    }) : <div className='rely'><CircleLoader size={100} color='green' />Loading...</div>}
                 </ul>
             </div>
             <Bottom />

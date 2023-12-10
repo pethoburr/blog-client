@@ -5,6 +5,7 @@ import { AuthContext } from '../App'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Bottom from './Bottom'
+import ClimbingBoxLoader from 'react-spinners/ClimbingBoxLoader';
 
 
 const Home = () => {
@@ -84,7 +85,7 @@ const Home = () => {
       <div className='latest'>
         <h3 className='font-effect-shadow-multiple'>LATEST POSTS</h3>
         <ul>
-        {posts.length > 0 && posts.map((post) => {
+        {posts.length > 0 ? posts.map((post) => {
           return(
             <li key={post._id}>
               <div className='title'>{post.title}</div>
@@ -95,7 +96,7 @@ const Home = () => {
               { token ? <button onClick={() => toPost(post._id)} className='continue'>Continue Reading</button> : <Link to='/log-in' className='loginContinue'>Log in to continue reading</Link>}
             </li>
             )
-          })}
+          }) : <div className='pac'><ClimbingBoxLoader size={15} color='green' />Loading...</div>}
         </ul>
       </div>
       <Bottom />

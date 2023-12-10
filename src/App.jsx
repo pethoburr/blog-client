@@ -12,13 +12,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 export const AuthContext = createContext()
 
 function App() {
-  const [token, setToken] = useState(null)
+  const saved = localStorage.getItem('token')
+  const [token, setToken] = useState(saved ? saved : null)
 
   const login = (newToken) => {
     setToken(newToken)
   }
 
   const logout = () => {
+    localStorage.clear()
     setToken(null)
   }
 

@@ -26,7 +26,6 @@ const Login = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'credentials': 'include'
             },
 
             body: JSON.stringify(data),
@@ -35,6 +34,7 @@ const Login = () => {
             .then((response) => {
                 login(response.token)
                 if (response.token) {
+                    localStorage.setItem('token', response.token)
                     navigate('/')
                 } else {
                     const jayed = JSON.stringify(response)

@@ -15,7 +15,7 @@ const Post = () => {
   const [slide, setSlide] = useState(false)
   const [newText, setNewText] = useState('')
   const { token, logout } = useContext(AuthContext)
-
+  
   const changer = (newer) => {
     const updatedComments = [...comments]
     const index = updatedComments.findIndex((item) => item._id === newer._id)
@@ -82,7 +82,6 @@ const toggleSidebar = () => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
     },
-    credentials: 'include',
     body: JSON.stringify({ text: newText}),
     })
     .then((resp) => resp.json())

@@ -766,4 +766,12 @@ h4 {
   form {
     width: 90%;
   }
+
+  .navOpened {
+    width: 100vw;
+  }
+
+  .login, .logout {
+    justify-content: center;
+  }
 }

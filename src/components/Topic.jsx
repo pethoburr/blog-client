@@ -18,14 +18,13 @@ const Topic = () => {
         fetch(`https://still-pond-6102.fly.dev/topics/${id}`)
             .then((resp) => resp.json())
             .then((resp) => {
-                console.log(resp)
                 setTopic(resp.topic)
-                resp.relevantPosts.map((post) => {
+                resp.formatted.map((post) => {
                     const copy = post.text
                     const sub = copy.substring(0, 140)
                     post.text = sub
                   })
-                setPosts(resp.relevantPosts)
+                setPosts(resp.formatted)
             })
             .catch((err) => console.log(err))
     }

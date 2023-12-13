@@ -659,6 +659,9 @@ h4 {
     padding: 0;
   }
 
+  .passFail {
+    margin-left: 5rem;
+  }
 
   .head, .headScroll {
     background-color: rgba(15, 238, 238, 0.3);

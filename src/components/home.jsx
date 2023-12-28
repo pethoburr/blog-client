@@ -84,7 +84,7 @@ const Home = () => {
       </div>
       <div className='latest'>
         <h3 className='font-effect-shadow-multiple'>LATEST POSTS</h3>
-        <ul>
+        <ul className='homeList'>
         {posts.length > 0 ? posts.map((post) => {
           return(
             <li key={post._id}>

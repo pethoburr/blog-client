@@ -85,7 +85,7 @@ const Topic = () => {
                 <ul className='topicRel'>
                     {posts.length > 0 ? posts.map((post) => {
                     return(
-                        <li key={post._id}>
+                        <li key={post._id} className='relpos'>
                         <div className='title' onClick={() => handleClick(post._id)}>{post.title}</div>
                         <div className='author' onClick={() => handleClick(post._id)}>{post.author}</div>
                         <div className='time' onClick={() => handleClick(post._id)}>{post.time}</div>

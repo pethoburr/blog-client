@@ -85,6 +85,10 @@ h5 {
   border-radius: 0;
 }
 
+.continue {
+  justify-self: flex-end;
+}
+
 .continue:hover, .loginContinue:hover {
   color: rgb(13, 107, 49);
   border-bottom: 2px solid rgb(13, 107, 49);
@@ -447,6 +451,7 @@ a {
 
 .topicRel {
   display: flex;
+  justify-content: space-around;
 }
 
 .topicDescription {
@@ -602,6 +607,11 @@ h4 {
 .homeList {
   margin-top: 7rem;
   margin-bottom: 7rem;
+}
+
+.relpos {
+  width: 21rem;
+  height: 21rem;
 }
 
 .start {

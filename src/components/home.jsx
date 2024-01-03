@@ -84,10 +84,10 @@ const Home = () => {
       </div>
       <div className='latest'>
         <h3 className='font-effect-shadow-multiple'>LATEST POSTS</h3>
-        <ul className='homeList'>
+        <ul className='postListContainer' id='hl'>
         {posts.length > 0 ? posts.map((post) => {
           return(
-            <li key={post._id}>
+            <li key={post._id} className='postListItem'>
               <div className='title'>{post.title}</div>
               <div className='author'>{post.author}</div>
               <div className='time'>{post.time}</div>

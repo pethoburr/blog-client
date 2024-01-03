@@ -74,6 +74,7 @@ const Topic = () => {
                     <Link to='/sign-up' className='out'>Sign up</Link>
                 </div> : <div className='logout'>
                     <button onClick={logOut} className='logOutBtn'>Logout</button>
+                    <Link to='/' className='post'>Home</Link>
                     <Link to='/posts' className='post'>Posts</Link>
                     <Link to='/topics' className='topic'>Topics</Link>
                 </div>}

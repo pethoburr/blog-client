@@ -480,13 +480,14 @@ a {
   margin-top: 7rem;
 }
 
-.postListItem:hover {
-  cursor: pointer;
-} 
-
 .postListContainer {
   display: flex;
   flex-direction: column;
+}
+
+#hl {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
 }
 
 .postListItem:last-child {

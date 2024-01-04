@@ -16,7 +16,7 @@ body, #root {
   background-position: center;
   width: 100vw;
   height: 100vh;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .others {
@@ -472,6 +472,14 @@ a {
 .postListItem {
   box-shadow: none;
   border-bottom: 2px solid #ddd;
+}
+
+#pl {
+  cursor: pointer;
+}
+
+#pld:hover {
+  color: green;
 }
 
 .postDetail {

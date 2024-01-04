@@ -76,8 +76,8 @@ const Posts = () => {
             <ul className='postListContainer'>
               {posts.length > 0 ? posts.map((post) => {
                 return(
-                    <li key={post._id} className='postListItem' onClick={() => {handleClick(post._id)}}>
-                      <p className='title'>{post.title}</p>
+                    <li key={post._id} className='postListItem' id='pl' onClick={() => {handleClick(post._id)}}>
+                      <p className='title' id='pld'>{post.title}</p>
                       <p className='author'>{post.author}</p>
                       <p className='time'>{post.time}</p>
                       <p dangerouslySetInnerHTML={{ __html: post.text}} />

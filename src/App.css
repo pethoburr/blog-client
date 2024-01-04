@@ -183,10 +183,6 @@ li:hover {
   align-items: center;
 }
 
-h3 {
-  margin: 0;
-}
-
 .rely {
   color: green;
   padding: 3rem;
@@ -201,13 +197,13 @@ h3 {
   display: flex;
   justify-content: center;
   font-size: 3rem;
+  margin: 0;
   color: green;
   padding-top: 2rem;
   padding-bottom: 2rem;
   font-style: italic;
   font-family: 'Merienda';
   background-color: rgba(87, 90, 90, 0.3);
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .head {
@@ -478,7 +474,7 @@ a {
   cursor: pointer;
 }
 
-#pld:hover {
+#pl:hover #pld {
   color: green;
 }
 

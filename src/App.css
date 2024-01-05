@@ -265,7 +265,7 @@ nav {
   transition: transform 0.5s ease-in-out;
 }
 
-.in, .out, .post, .topic {
+.in, .out {
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -275,10 +275,23 @@ nav {
   justify-content: center;
 }
 
+.post, .topic {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  font-size: 2rem;
+  color: black !important;
+  justify-content: center;
+}
+
+.post:hover, .topic:hover, .logOutBtn:hover {
+  color: green !important;
+}
+
 .logOutBtn {
   display: flex;
   justify-content: center;
-  color: rgb(2, 70, 47);
   width: 100%;
   background-color: transparent;
   margin: 1rem;
@@ -443,6 +456,19 @@ a {
   background-color: rgba(102, 103, 104, 0.1);
   border-right: 6px solid rgb(13, 107, 49);
   box-shadow: 9px 1px 14px -5px rgba(13,107,0,1);
+}
+
+.active {
+  color: rgb(17, 153, 78) !important;
+  background-color: rgba(102, 103, 104, 0.1);
+  border-right: 6px solid rgb(13, 107, 49);
+  box-shadow: 9px 1px 14px -5px rgba(13,107,0,1);
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
 }
 
 .topicRel {

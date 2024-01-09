@@ -75,6 +75,7 @@ const toggleSidebar = () => {
     e.preventDefault()
     console.log(token.id)
     console.log(`text: ${newText}`)
+    if (newText.length === 0) { return }
     fetch(`https://still-pond-6102.fly.dev/posts/${id}/comments/add`, {
       mode: 'cors',
       method: 'POST',
